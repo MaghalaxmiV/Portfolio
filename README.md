@@ -1,4 +1,4 @@
-# Maghalaxmi V Portfolio — Final 10
+# Maghalaxmi V Portfolio
 
 A responsive professional portfolio for Maghalaxmi V.
 
