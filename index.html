@@ -323,18 +323,16 @@
       }
       @media(max-width:760px){
         .nav-inner{position:relative;justify-content:flex-start}
-        .brand{margin-left:54px}
-        .mobile-menu-btn{
+        .brand{margin-left:54px;display:inline-flex;align-items:center;gap:4px}
+        .menu{
           position:absolute;left:0;top:50%;transform:translateY(-50%);
           width:42px;height:42px;border:1px solid rgba(255,255,255,.13);
           border-radius:12px;background:rgba(255,255,255,.045);
-          display:flex;flex-direction:column;align-items:center;justify-content:center;
-          gap:5px;cursor:pointer;z-index:1101;
+          display:flex;align-items:center;justify-content:center;
+          color:#eef2ff;font-size:1.45rem;line-height:1;cursor:pointer;z-index:1101;
+          padding:0;
         }
-        .mobile-menu-btn span{display:block;width:19px;height:2px;border-radius:3px;background:#eef2ff;transition:.2s}
-        .mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-        .mobile-menu-btn.open span:nth-child(2){opacity:0}
-        .mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .menu.open{background:rgba(255,255,255,.08)}
         .nav-links{
           position:fixed;inset:0 auto 0 0;width:min(82vw,320px);
           height:100dvh;padding:92px 28px 32px;
@@ -435,11 +433,7 @@ section,.section,.about-card,.skill-slide,.project-card,.experience-card,.educat
   white-space:nowrap !important;
 }
 @media(max-width:760px){
-  .floating-photo{
-    top:auto !important;
-    right:14px !important;
-    bottom:18px !important;
-  }
+  .floating-photo{top:74px !important;right:14px !important;bottom:auto !important;}
 }
 
 
@@ -505,6 +499,24 @@ section,.section,.about-card,.skill-slide,.project-card,.experience-card,.educat
   .mobile-drawer{z-index:1099 !important}
 }
 
+
+/* Mobile Home layout: menu first, profile after the main heading. */
+@media(max-width:760px){
+  .hero{padding:88px 0 56px;min-height:auto}
+  .hero-grid{display:flex !important;flex-direction:column !important;gap:22px !important;align-items:stretch !important}
+  .hero-grid > .reveal{display:contents}
+  .hero-grid > .reveal .eyebrow{order:1}
+  .hero-grid > .reveal h1{order:2;margin-bottom:4px}
+  .hero-grid > .profile-stage{order:3;width:100%;margin:4px auto 2px}
+  .hero-grid > .reveal .hero-copy{order:4}
+  .hero-grid > .reveal .hero-actions{order:5}
+  .profile-stage{display:block !important}
+  .profile-ring{width:min(82vw,360px) !important;height:min(82vw,360px) !important;margin:0 auto !important}
+  .profile-photo{width:100% !important;height:100% !important;object-fit:cover !important}
+  .photo-note{right:-6px !important;bottom:8px !important;max-width:68% !important;font-size:.92rem !important;line-height:1.45 !important}
+  .hero h1{font-size:clamp(3rem,12vw,4.6rem) !important;line-height:.98 !important}
+  .hero-copy{font-size:1.02rem !important;line-height:1.72 !important}
+}
 
 /* Final 10: floating identity badge and reliable skills carousel */
 .floating-photo{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;transform:translateY(-8px);}
